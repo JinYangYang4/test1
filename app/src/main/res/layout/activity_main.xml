@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:backgroundTint="@color/blue"
+        android:padding="16dp"/>
+
+    <RelativeLayout
+        android:id="@+id/local_music_bottomlayout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+
+        android:layout_above="@+id/daoHangLan"
+        android:background="@color/ziSe"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/black"
+            tools:ignore="ContentDescription" />
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/local_music_bottom_iv_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            android:layout_marginStart="20dp"
+            android:src="@drawable/img_2"
+            tools:ignore="MissingClass" />
+
+        <TextView
+            android:id="@+id/local_music_bottom_tv_song"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/local_music_bottom_iv_icon"
+            android:text=""
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="RelativeOverlap,RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/local_music_bottom_tv_singer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/local_music_bottom_tv_song"
+            android:layout_alignLeft="@id/local_music_bottom_tv_song"
+            android:layout_marginTop="10dp"
+            android:text=""
+            android:textSize="14sp"
+            tools:ignore="RtlHardcoded" />
+
+        <ImageView
+            android:id="@+id/local_music_bottom_iv_next"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/next"
+            tools:ignore="ContentDescription,RtlHardcoded" />
+
+        <ImageView
+            android:id="@+id/local_music_bottom_iv_play"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/local_music_bottom_iv_next"
+            android:src="@drawable/play"
+            tools:ignore="ContentDescription,RtlHardcoded" />
+
+        <ImageView
+            android:id="@+id/local_music_bottom_iv_last"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="80dp"
+            android:layout_toLeftOf="@+id/local_music_bottom_iv_next"
+            android:src="@drawable/last"
+            tools:ignore="ContentDescription,RtlHardcoded" />
+
+
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/local_music_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/local_music_bottomlayout"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="-1dp" />
+
+    <SeekBar
+        android:id="@+id/musicSeekbar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:max="100"
+        android:layout_above="@+id/local_music_bottomlayout"
+        />
+    <RelativeLayout
+        android:backgroundTint="@color/white"
+    android:id="@+id/daoHangLan"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:layout_alignParentBottom="true"
+    android:background="@color/white">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+
+
+
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+
+            <Button
+                android:id="@+id/benDi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="本地"
+                android:textColor="@color/blue"
+            android:background="#00000000" />
+
+
+            <Button
+                android:id="@+id/ting"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="听音乐"
+                android:textColor="#000000"
+            android:background="#00000000" />
+
+
+            <Button
+                android:id="@+id/communicate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="社区"
+                android:textColor="#000000"
+            android:background="#00000000"/>
+
+            <Button
+                android:id="@+id/myself"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="我的"
+                android:textColor="#000000"
+            android:background="#00000000" />
+
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/daoHangLan"
+            android:background="@color/blue"
+            tools:ignore="NotSibling" />
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+</RelativeLayout>
